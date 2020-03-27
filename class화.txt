@@ -1,0 +1,43 @@
+class a
+def preprocessing(path, seq_length, predict, split):
+    dataset = pd.read_csv(path, index_col=None, header=None)
+
+    data = dataset.values.astype(np.float32)
+    label = dataset.iloc[:, -1:].values.astype(np.float32)
+
+    data = data.reshape(data.shape[0], len(data[0]))
+    label = label.reshape(label.shape[0], len(label[0]))
+
+    scaler_ = StandardScaler()
+    data = scaler_.fit_transform(data)
+    scaler_ = StandardScaler()
+    label = scaler_.fit_transform(label)
+
+    data, label = to_supervised(data, label, predict, seq_length)
+
+    self.train_data = data[:int(len(data)*split)]
+    self.test_data = data[int(len(data)*split):]
+    self.train_label = label[:int(len(label)*split)]
+    self.test_label = label[int(len(label)*split):]
+
+
+
+
+
+class a.preprocessing
+
+    train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(a.train_data, a.train_label), batch_size=batch_size)
+    test_set = gluon.data.DataLoader(gluon.data.ArrayDataset(a.test_data, a.test_label), batch_size=batch_size)
+
+    
+trainer = gluon.Trainer(model.collect_params(), 'sgd', {'learning_rate': 0.01})
+
+
+### Let’s run the training loop and plot MSEs
+epochs = 30
+training_mse = []        # 평균 제곱 오차를 기록
+validation_mse = []
+
+for epoch in range(epochs):
+    print(str(epoch+1))
+    for i, (d, l) in enumerate(train_iter):

@@ -26,18 +26,29 @@ data.to_csv('dataset/text_test.csv', index=None, sep=',', encoding='utf-8')
 
 ########################################################################################################################
 import pandas as pd
-text = pd.read_csv('dataset/text_test.csv', sep=',', encoding='utf-8')
+
+path = 'dataset/text_test.csv'
+
+def text_preprocessing(path, ):
+
+text = pd.read_csv(path, sep=',', encoding='utf-8')
+text.values
 
 print('총 샘플의 개수 : {}'.format(len(text)))             # 현재 샘플의 개수
 
 text = text.values
 
+# 구두점 제거와 동시에 소문자화
 def repreprocessing(s):
     s = s
-    return ''.join(c for c in s if c not in punctuation).lower() # 구두점 제거와 동시에 소문자화
+    return ''.join(c for c in s if c not in punctuation).lower()
 
 text = [repreprocessing(x) for x in text]
+
 text[:5]
+
+import gluonnlp
+tokenizer = gluonnlp.data.get_tokenizer(model_name, dataset_name, vocab)
 
 
 t = Tokenizer()
