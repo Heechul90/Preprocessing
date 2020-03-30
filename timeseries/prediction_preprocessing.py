@@ -17,7 +17,7 @@ class Preprocessing():
         self.sp = sp
 
 
-    def preprocessing(self):
+    def prediction(self):
         path, seq_length, predict, split = self.data_path, self.seq, self.pred, self.sp
 
         dataset = pd.read_csv(path, index_col=None, header=None)
