@@ -3,7 +3,7 @@ from string import punctuation
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import mxnet as mx
-import gluonnlp as nlp
+
 
 data = pd.read_csv('dataset/ArticlesApril2018.csv')
 
