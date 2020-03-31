@@ -10,14 +10,11 @@ split = 0.7
 a = Preprocessing()
 a.setdata(path, seq_length, predict, split)
 train_data, test_data, train_label, test_label = a.prediction()
-len(train_data)
-len(test_data)
+
 
 batch_size=32
 train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
 test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
-for d, l in train_iter:
-    break
 
 
 # print('train_data의 크기: ', train_data.shape)
@@ -52,7 +49,6 @@ def evaluate_accuracy(data_iterator, model, L):
 # cpu or gpu
 ctx = mx.cpu()
 
-
 # Xavier는 모든 layers에서 gradient scale이 거의 동일하게 유지하도록 설계됨
 model.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
 
@@ -82,31 +78,3 @@ for epoch in range(epochs):
 
     training_mse.append(evaluate_accuracy(train_iter, model, L))
     validation_mse.append(evaluate_accuracy(test_iter, model, L))
-
-
-
-########################################################################################################################
-from timeseries.autoencoder_preprocessing import Preprocessing
-
-path = 'dataset/autoencoder/train_test.csv'
-validation = 0.9
-
-a = Preprocessing()
-a.setdata(path, validation)
-train_data, validation_data = a.autoencoder()
-train_data
-
-
-
-########################################################################################################################
-from timeseries.text_preprocessing import Preprocessing
-
-path = 'dataset/text/text_test.csv'
-validation = 0.8
-
-a = Preprocessing()
-a.setdata(path, validation)
-train_data, validation_data = a.text_generation()
-train_data
-validation_data
-
