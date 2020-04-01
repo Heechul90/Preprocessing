@@ -6,22 +6,24 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 from tensorflow.keras.utils import to_categorical
+from mxnet import gluon, autograd, nd
 
 
 class Preprocessing():
-    def setdata(self, data_path, val):
+    def setdata(self, data_path, val, batch):
         self.data_path = data_path
         self.val = val
+        self.batch = batch
 
     def text_generation(self):
-        path, validation = self.data_path, self.val
+        path, validation, batch_size = self.data_path, self.val, self.batch
         data = pd.read_csv(path, header=None)
 
         text = []
         text.extend(list(data[0].values))
 
         def punctu(s):
-            # s = s.encode('utf-8').decode('ascii', 'ignore')
+            s = s.encode('utf-8').decode('ascii', 'ignore')
             return ''.join(c for c in s if c not in punctuation).lower()
 
         text = [punctu(x) for x in text]
@@ -51,6 +53,9 @@ class Preprocessing():
         train_label = y[:int(len(y) * validation)]
         validation_label = y[int(len(y) * validation):]
 
-        return train_data, validation_data, train_label, validation_label
+        train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
+        test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(validation_data, validation_label), batch_size=batch_size)
+
+        return train_iter, test_iter
 
 

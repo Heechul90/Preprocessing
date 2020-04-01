@@ -3,6 +3,7 @@ import numpy as np
 import mxnet as mx
 from mxnet import nd, autograd, gluon
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 
 
 class Preprocessing():
@@ -16,8 +17,8 @@ class Preprocessing():
 
         data = data.values.astype(np.float32)
 
-        scaler_ = StandardScaler()
-        data = scaler_.fit_transform(data)
+        # scaler_ = StandardScaler()
+        # data = scaler_.fit_transform(data)
 
         train_data = data[: int(len(data) * validation)]
         validation_data = data[int(len(data) * validation): ]
