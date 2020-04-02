@@ -15,6 +15,8 @@ len(validation_data)
 
 
 
+
+
 batch_size=32
 train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
 test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(validation_data, validation_label), batch_size=batch_size)

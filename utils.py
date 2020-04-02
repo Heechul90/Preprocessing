@@ -201,25 +201,24 @@ def evaluate_accuracy(data_iterator, net, ctx=[mx.cpu()]):
 #             "Epoch %d. Loss: %.3f, Train acc %.2f, Test acc %.2f, Time %.1f sec"
 #             % (epoch, train_loss / n, train_acc / m, test_acc, time() - start))
 
-def train(train_iter,
-          test_iter,
+def train(train_data,
+          test_data,
           net,
           loss,
           trainer,
           ctx,
           num_epochs,
           print_batches=None):
-
     """Train a network"""
     print("Start training on ", ctx)
     if isinstance(ctx, mx.Context):
         ctx = [ctx]
     for epoch in range(num_epochs):
         train_loss, train_acc, n, m = 0.0, 0.0, 0.0, 0.0
-        if isinstance(train_iter, mx.io.MXDataIter):
-            train_iter.reset()
+        if isinstance(train_data, mx.io.MXDataIter):
+            train_data.reset()
         start = time()
-        for i, batch in enumerate(train_iter):
+        for i, batch in enumerate(train_data):
             data, label, batch_size = _get_batch(batch, ctx)
             losses = []
             with autograd.record():
@@ -237,7 +236,7 @@ def train(train_iter,
                 print("Batch %d. Loss: %f, Train acc %f" % (n, train_loss / n,
                                                             train_acc / m))
 
-        test_acc = evaluate_accuracy(test_iter, net, ctx)
+        test_acc = evaluate_accuracy(test_data, net, ctx)
         print(
             "Epoch %d. Loss: %.3f, Train acc %.2f, Test acc %.2f, Time %.1f sec"
             % (epoch, train_loss / n, train_acc / m, test_acc, time() - start))
@@ -259,8 +258,8 @@ def score(train_data, test_data, train_label, test_label):
 
     label = test_label.reshape(len(test_label), 1)
     pred = y_pred.reshape(len(y_pred), 1)
-    label = label_binarize(label, classes=[0, 1, 2])
-    pred = label_binarize(pred, classes=[0, 1, 2])
+    label = label_binarize(label, classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    pred = label_binarize(pred, classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
     # precision
     precision = precision_score(y_true=test_label, y_pred=y_pred, average='weighted', zero_division=0)
@@ -273,7 +272,7 @@ def score(train_data, test_data, train_label, test_label):
     print('F1 score: %f' % f1)
 
     #####################################
-    n_classes = 3
+    n_classes = 10
     fpr = dict()
     tpr = dict()
     roc_auc = dict()

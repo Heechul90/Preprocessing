@@ -18,7 +18,7 @@ class Preprocessing():
         path, split = self.data_path, self.sp
 
         df = pd.read_csv(path, header=None)
-        df = df.sample(frac=1)
+        # df = df.sample(frac=1)
         df = df.values.astype('float32')
 
         X = df[:,:-1]
@@ -40,8 +40,8 @@ class Preprocessing():
     def nolabel(self):
         path, split = self.data_path, self.sp
 
-        df = pd.read_csv('dataset1/iris.csv', header=None)
-        df = df.sample(frac=1)
+        df = pd.read_csv(path, header=None)
+        # df = df.sample(frac=1)
         df = df.values
         X = df[:,:-1].astype('float32')
         y_obj = df[:,-1]
@@ -50,7 +50,6 @@ class Preprocessing():
         e.fit(y_obj)
         y = e.transform(y_obj)
         y = y.astype('float32')
-        X[:10]
 
         train_data = X[:int(len(X) * split)]
         test_data = X[int(len(X) * split):]
