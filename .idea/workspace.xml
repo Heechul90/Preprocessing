@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f295514-939d-40f5-adaf-b696179b75e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cnn/image_preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/image_preprocessing_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROC.png" beforeDir="false" afterPath="$PROJECT_DIR$/ROC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn/dense_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/dense_preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rnn/autoencoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/autoencoder_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rnn/text_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/text_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rnn/파이썬 전처리 코드 모듈화 설명.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/파이썬 전처리 코드 모듈화 설명.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dense_preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/dense_preprocessing_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/timeseries/autoencoder_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/timeseries/autoencoder_preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnn/image_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/image_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/image_preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/image_preprocessing_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+            <state relative-caret-position="264">
+              <caret line="78" selection-start-line="78" selection-end-line="79" selection-end-column="118" />
               <folding>
                 <element signature="e#2#20#0" expanded="true" />
               </folding>
@@ -37,10 +29,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cnn/image_preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="495">
+              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,14 +40,21 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/image_preprocessing_test.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cnn/dense_preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="330">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -66,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="802">
-              <caret line="293" column="24" selection-start-line="293" selection-start-column="24" selection-end-line="293" selection-end-column="24" />
+            <state relative-caret-position="408">
+              <caret line="82" column="72" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="72" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -91,6 +90,7 @@
       <find>load_data_fashion_mnist</find>
       <find>df.values.astype('float32')</find>
       <find>train</find>
+      <find>data</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,6 +126,7 @@
         <option value="$PROJECT_DIR$/cnn/dense_preprocessing.py" />
         <option value="$PROJECT_DIR$/test/dense_preprocessing_test.py" />
         <option value="$PROJECT_DIR$/cnn/image_preprocessing.py" />
+        <option value="$PROJECT_DIR$/test/image_preprocessing_test.py" />
       </list>
     </option>
   </component>
@@ -170,13 +171,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\HeechulFromGithub\Preprocessing\test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HeechulFromGithub\Preprocessing\test" />
       <recent name="D:\HeechulFromGithub\Preprocessing\timeseries" />
       <recent name="D:\HeechulFromGithub\Preprocessing\rnn" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\HeechulFromGithub\Preprocessing\test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,14 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585530574938</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="preprocessing">
+      <created>1585805311265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585805311265</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -236,7 +244,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.29955456" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3997773" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.33407572" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -244,7 +252,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="time series preprocessing for rnn and lstm" />
-    <option name="LAST_COMMIT_MESSAGE" value="time series preprocessing for rnn and lstm" />
+    <MESSAGE value="preprocessing" />
+    <option name="LAST_COMMIT_MESSAGE" value="preprocessing" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/HeechulCode/cnn_lstm/MyDoing/CNNLSTM_ex1.py">
@@ -405,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="802">
-          <caret line="293" column="24" selection-start-line="293" selection-start-column="24" selection-end-line="293" selection-end-column="24" />
+        <state relative-caret-position="408">
+          <caret line="82" column="72" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="72" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -415,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+        <state relative-caret-position="264">
+          <caret line="78" selection-start-line="78" selection-end-line="79" selection-end-column="118" />
           <folding>
             <element signature="e#2#20#0" expanded="true" />
           </folding>
@@ -425,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cnn/dense_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="330">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -435,16 +444,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cnn/image_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="495">
+          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/image_preprocessing_test.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
