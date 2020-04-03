@@ -5,12 +5,12 @@ from sklearn.model_selection import train_test_split
 
 
 class Preprocessing():
-    def setdata(self, image_resize, batch_size):
+    def setdata(self, path, image_resize):
+        self.path = path
         self.image_resize = image_resize
-        self.batch_size = batch_size
 
     def MNIST(self):
-        image_resize, batch_size = self.image_resize, self.batch_size
+        path, image_resize = self.path, self.image_resize
 
         def transformer(data, label):
             data = mx.image.imresize(data, image_resize, image_resize)
@@ -18,18 +18,25 @@ class Preprocessing():
             label = np.float32(label)
             return data, label
 
-        train_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.MNIST('dataset/image/MNIST', train=True, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_iter = gluon.data.vision.datasets.MNIST(path, train=True, transform=transformer)
+        test_iter = gluon.data.vision.datasets.MNIST(path, train=False, transform=transformer)
 
-        test_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.MNIST('dataset/image/MNIST', train=False, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_data = []
+        train_label = []
+        for train_d, train_l in train_iter:
+            train_data.append(train_d)
+            train_label.append(train_l)
 
-        return train_iter, test_iter
+        test_data = []
+        test_label = []
+        for test_d, test_l in test_iter:
+            test_data.append(test_d)
+            test_label.append(test_l)
+
+        return train_data, train_label, test_data, test_label
 
     def FashionMNIST(self):
-        image_resize, batch_size = self.image_resize, self.batch_size
+        path, image_resize = self.path, self.image_resize
 
         def transformer(data, label):
             data = mx.image.imresize(data, image_resize, image_resize)
@@ -37,18 +44,25 @@ class Preprocessing():
             label = np.float32(label)
             return data, label
 
-        train_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.FashionMNIST('dataset/image/FashionMNIST', train=True, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_iter = gluon.data.vision.datasets.FashionMNIST(path, train=True, transform=transformer)
+        test_iter = gluon.data.vision.datasets.FashionMNIST(path, train=False, transform=transformer)
 
-        test_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.FashionMNIST('dataset/image/FashionMNIST', train=False, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_data = []
+        train_label = []
+        for train_d, train_l in train_iter:
+            train_data.append(train_d)
+            train_label.append(train_l)
 
-        return train_iter, test_iter
+        test_data = []
+        test_label = []
+        for test_d, test_l in test_iter:
+            test_data.append(test_d)
+            test_label.append(test_l)
+
+        return train_data, train_label, test_data, test_label
 
     def CIFAR10(self):
-        image_resize, batch_size = self.image_resize, self.batch_size
+        path, image_resize = self.path, self.image_resize
 
         def transformer(data, label):
             data = mx.image.imresize(data, image_resize, image_resize)
@@ -56,18 +70,25 @@ class Preprocessing():
             label = np.float32(label)
             return data, label
 
-        train_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.CIFAR10('dataset/image/CIFAR10', train=True, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_iter = gluon.data.vision.datasets.CIFAR10(path, train=True, transform=transformer)
+        test_iter = gluon.data.vision.datasets.CIFAR10(path, train=False, transform=transformer)
 
-        test_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.CIFAR10('dataset/image/CIFAR10', train=False, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_data = []
+        train_label = []
+        for train_d, train_l in train_iter:
+            train_data.append(train_d)
+            train_label.append(train_l)
 
-        return train_iter, test_iter
+        test_data = []
+        test_label = []
+        for test_d, test_l in test_iter:
+            test_data.append(test_d)
+            test_label.append(test_l)
+
+        return train_data, train_label, test_data, test_label
 
     def CIFAR100(self):
-        image_resize, batch_size = self.image_resize, self.batch_size
+        path, image_resize = self.path, self.image_resize
 
         def transformer(data, label):
             data = mx.image.imresize(data, image_resize, image_resize)
@@ -75,13 +96,19 @@ class Preprocessing():
             label = np.float32(label)
             return data, label
 
-        train_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.CIFAR100('dataset/image/CIFAR100', train=True, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_iter = gluon.data.vision.datasets.CIFAR100(path, train=True, transform=transformer)
+        test_iter = gluon.data.vision.datasets.CIFAR100(path, train=False, transform=transformer)
 
-        test_iter = gluon.data.DataLoader(
-            gluon.data.vision.datasets.CIFAR100('dataset/image/CIFAR100', train=False, transform=transformer),
-            batch_size=batch_size, shuffle=False, last_batch='discard')
+        train_data = []
+        train_label = []
+        for train_d, train_l in train_iter:
+            train_data.append(train_d)
+            train_label.append(train_l)
 
-        return train_iter, test_iter
+        test_data = []
+        test_label = []
+        for test_d, test_l in test_iter:
+            test_data.append(test_d)
+            test_label.append(test_l)
 
+        return train_data, train_label, test_data, test_label

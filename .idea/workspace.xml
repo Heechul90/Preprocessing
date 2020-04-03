@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f295514-939d-40f5-adaf-b696179b75e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cnn/load_datasets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cnn/load_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/load_datasets_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/timeseries/text_preprocessing_mxnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/load_image_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn/image_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/image_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnn/asdfasfdasdf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnn/load_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/load_datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnn/load_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/load_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/autoencoder_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/prediction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/prediction_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_generation1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_generation1/index.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_generation1/model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_generation1/model/gpt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_generation1/sequence_sampling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/text_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rnn/파이썬 전처리 코드 모듈화 설명.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/load_datasets_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/load_datasets_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/text_preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/text_preprocessing_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeseries/autoencoder_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/autoencoder_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeseries/prediction_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/prediction_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeseries/text_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/text_preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timeseries/text_preprocessing_mxnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/rnn/text_preprocessing_mxnet.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +33,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
+        <entry file="file://$PROJECT_DIR$/test/load_image_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1077">
-              <caret line="96" column="14" lean-forward="true" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
+            <state relative-caret-position="66">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cnn/load_datasets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="113" column="61" lean-forward="true" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -32,34 +59,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/load_datasets_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="1023">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cnn/load_image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cnn/image_preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="115" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,7 +110,6 @@
         <option value="$PROJECT_DIR$/cnn/dense.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/timeseries/text_preprocessing.py" />
-        <option value="$PROJECT_DIR$/test/text_preprocessing_test.py" />
         <option value="$PROJECT_DIR$/zprof/DT.py" />
         <option value="$PROJECT_DIR$/rnn/text_test.py" />
         <option value="$PROJECT_DIR$/timeseries/autoencoder_preprocessing.py" />
@@ -118,18 +120,21 @@
         <option value="$PROJECT_DIR$/test/dense_preprocessing_test.py" />
         <option value="$PROJECT_DIR$/timeseries/text_preprocessing_mxnet.py" />
         <option value="$PROJECT_DIR$/cnn/image_preprocessing.py" />
-        <option value="$PROJECT_DIR$/cnn/load_datasets.py" />
         <option value="$PROJECT_DIR$/test/image_preprocessing_test.py" />
-        <option value="$PROJECT_DIR$/test/load_datasets_test.py" />
+        <option value="$PROJECT_DIR$/cnn/asdfasfdasdf.py" />
         <option value="$PROJECT_DIR$/cnn/load_image.py" />
+        <option value="$PROJECT_DIR$/test/load_image_test.py" />
+        <option value="$PROJECT_DIR$/test/text_preprocessing_test.py" />
+        <option value="$PROJECT_DIR$/test/load_datasets_test.py" />
+        <option value="$PROJECT_DIR$/cnn/load_datasets.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1849" />
+    <option name="y" value="60" />
+    <option name="width" value="1932" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -150,6 +155,11 @@
               <item name="Preprocessing" type="462c0819:PsiDirectoryNode" />
               <item name="cnn" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Preprocessing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -158,17 +168,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\HeechulFromGithub\Preprocessing\test" />
+      <recent name="D:\HeechulFromGithub\Preprocessing\timeseries" />
+      <recent name="D:\HeechulFromGithub\Preprocessing\rnn" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\HeechulFromGithub\Preprocessing\test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\HeechulFromGithub\Preprocessing\timeseries" />
-      <recent name="D:\HeechulFromGithub\Preprocessing\test" />
-      <recent name="D:\HeechulFromGithub\Preprocessing\rnn" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -222,14 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585814104870</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="preprocessing">
+      <created>1585891994385</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585891994385</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -242,7 +259,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.29955456" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.35634744" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.42538977" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -282,36 +299,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnn/text_generation1/sequence_sampling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="129" column="9" lean-forward="true" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-          <folding>
-            <element signature="e#1124#1139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rnn/text_generation1/autoencoder_preprocessing.py" />
     <entry file="file://$PROJECT_DIR$/rnn/timeseries.py" />
-    <entry file="file://$PROJECT_DIR$/rnn/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn/prediction.py" />
     <entry file="file://$PROJECT_DIR$/alexnet.py" />
-    <entry file="file://$PROJECT_DIR$/rnn/prediction_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn/prediction_test.py" />
     <entry file="file://$PROJECT_DIR$/PackageClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -334,16 +326,6 @@
     <entry file="file://$PROJECT_DIR$/zprof/ROC.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/text_preprocessing_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zprof/DT.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -354,31 +336,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnn/text_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rnn/autoencoder_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="89" column="17" lean-forward="true" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timeseries/text_preprocessing_mxnet.py">
+    <entry file="file://$PROJECT_DIR$/rnn/text_preprocessing_mxnet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timeseries/text_preprocessing.py">
+    <entry file="file://$PROJECT_DIR$/rnn/text_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
@@ -398,17 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="e#2#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timeseries/prediction_preprocessing.py">
+    <entry file="file://$PROJECT_DIR$/rnn/prediction_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
@@ -418,7 +373,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timeseries/autoencoder_preprocessing.py">
+    <entry file="file://$PROJECT_DIR$/rnn/autoencoder_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-328">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="19" />
@@ -428,39 +383,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/image_preprocessing_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="10" column="120" selection-start-line="10" selection-end-line="10" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/load_datasets_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cnn/image_preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="115" />
+        <state relative-caret-position="99">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnn/asdfasfdasdf.py" />
+    <entry file="file://$PROJECT_DIR$/cnn/load_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cnn/load_datasets.py">
+    <entry file="file://$PROJECT_DIR$/rnn/text_generation1/model/gpt.py" />
+    <entry file="file://$PROJECT_DIR$/rnn/text_generation1/sequence_sampling.py" />
+    <entry file="file://$PROJECT_DIR$/rnn/autoencoder_test.py" />
+    <entry file="file://$PROJECT_DIR$/rnn/text_test.py" />
+    <entry file="file://$PROJECT_DIR$/test/text_preprocessing_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="167">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3597">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -468,19 +425,52 @@
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1077">
-          <caret line="96" column="14" lean-forward="true" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
+          <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cnn/load_image.py">
+    <entry file="file://$PROJECT_DIR$/test/image_preprocessing_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="990">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/load_image_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/load_datasets_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1023">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnn/load_datasets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="113" column="61" lean-forward="true" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

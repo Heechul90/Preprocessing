@@ -11,22 +11,22 @@ import utils
 ########################################################################################################################
 from cnn.load_datasets import Preprocessing
 
-image_resize = 96
-batch_size = 64
+path = 'dataset/image/CIFAR10'
+image_resize = 244
+
 
 a = Preprocessing()
-a.setdata(image_resize, batch_size)
-train_iter, test_iter = a.MNIST()
+a.setdata(path, image_resize)
+train_data, train_label, test_data, test_label = a.CIFAR10()
 
-for d, l in train_iter:
-    break
-
-
+batch_size = 32
+train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
+test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
 
 ################## model
 from mxnet.gluon.model_zoo import vision
 ctx = mx.cpu()
-net = vision.alexnet(classes=10, pretrained=False)
+net = vision.resnet18_v1(classes=10, pretrained=False)
 
 net.initialize(ctx=ctx, init=init.Xavier())
 

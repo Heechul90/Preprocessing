@@ -5,7 +5,7 @@ import utils
 
 
 ########################################################################################################################
-from timeseries.text_preprocessing import Preprocessing
+from rnn.text_preprocessing import Preprocessing
 
 path = 'dataset/text/text_test.csv'
 validation = 0.8
