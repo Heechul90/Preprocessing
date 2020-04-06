@@ -14,26 +14,15 @@ from cnn.image_preprocessing import Preprocessing
 data_path = 'dataset/image/MonkeySpecies'
 image_resize = 224
 test_size = 0.3
+batch_size = 32
 
 a = Preprocessing()
-a.setdata(data_path, image_resize, test_size)
-train_data, test_data, train_label, test_label = a.image()
+a.setdata(data_path, image_resize, test_size, batch_size)
+train_iter, test_iter = a.image()
 
-len(train_data)
-len(test_data)
-len(train_label)
-len(test_label)
-
-print(train_data[0].shape)
-print(test_data[0].shape)
-print(train_label[0])
-print(test_label[0])
-
-batch_size = 32
-train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
-test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
-
-
+for d ,l in train_iter:
+    break
+d.shape
 ################## model
 from mxnet.gluon.model_zoo import vision
 ctx = mx.cpu()

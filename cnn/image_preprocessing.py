@@ -5,13 +5,14 @@ from sklearn.model_selection import train_test_split
 
 
 class Preprocessing():
-    def setdata(self, data_path, image_resize, test_size):
+    def setdata(self, data_path, image_resize, test_size, batch_size):
         self.data_path = data_path
         self.image_resize = image_resize
         self.test_size = test_size
+        self.batch_size = batch_size
 
     def image(self):
-        data_path, image_resize, test_size = self.data_path, self.image_resize, self.test_size
+        data_path, image_resize, test_size, batch_size = self.data_path, self.image_resize, self.test_size, self.batch_size
 
         def transformer(data, label):
             data = mx.image.imresize(data, image_resize, image_resize)
@@ -27,9 +28,14 @@ class Preprocessing():
             img_data.append(d)
             img_label.append(l)
 
+        train_data, test_data, train_label, test_label = train_test_split(img_data, img_label, test_size=test_size,
+                                                                          shuffle=False)
 
-        train_data, test_data, train_label, test_label = train_test_split(img_data, img_label, test_size=test_size)
+        train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size,
+                                           shuffle=False)
+        test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size,
+                                          shuffle=False)
 
-        return train_data, test_data, train_label, test_label
+        return train_iter, test_iter
 
 

@@ -7,59 +7,63 @@ from mxnet.gluon import nn
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
+path = 'dataset1/iris.csv'
+test_size = 0.2
+batch_size = 32
 
 class Preprocessing():
-    def setdata(self, data_path, sp):
-        self.data_path = data_path
-        self.sp = sp
-        # self.batch = batch
+    def setdata(self, path, test_size, batch_size):
+        self.path = path
+        self.test_size = test_size
+        self.batch_size = batch_size
 
     def label(self):
-        path, split = self.data_path, self.sp
+        path, test_size, batch_size = self.path, self.test_size, self.batch_size
 
+        # 데이터 불러오기
         df = pd.read_csv(path, header=None)
-        # df = df.sample(frac=1)
+
+        # 읽어온 데이터 array로 변환
         df = df.values.astype('float32')
 
-        X = df[:,:-1]
-        y = df[:,-1]
+        # 입력값과 출력값 나누기
+        X = df[:,:-1]     # 마지막 컬럼을 제외한 나머지 컬럼
+        y = df[:,-1]      # 출력값(타겟값)인 마지막 컬럼
 
-        train_data = X[:int(len(X) * split)]
-        test_data = X[int(len(X) * split):]
-        train_label = y[:int(len(y) * split)]
-        test_label = y[int(len(y) * split):]
+        # test_size 입력하여 test를 몇으로 할건지, shuffle값이 default면 True
+        train_data, test_data, train_label, test_label = train_test_split(X, y, test_size = test_size, shuffle=False)
 
-        # train_data, test_data, train_label, test_label = train_test_split(X, y, test_size = (1 - split))
+        # DataLoader를 이용하여 batch_size 결정
+        train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size, shuffle=False)
+        test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size, shuffle=False)
 
-        # train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size, shuffle=True)
-        # test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
-
-        return train_data, test_data, train_label, test_label
-
+        return train_iter, test_iter
 
     def nolabel(self):
-        path, split = self.data_path, self.sp
+        path, test_size, batch_size = self.path, self.test_size, self.batch_size
 
+        # 데이터 불러오기
         df = pd.read_csv(path, header=None)
+
         # df = df.sample(frac=1)
         df = df.values
-        X = df[:,:-1].astype('float32')
-        y_obj = df[:,-1]
 
+        # 입력값과 출력값 나누기
+        X = df[:,:-1].astype('float32') # 마지막 컬럼을 제외한 나머지 컬럼
+        y_obj = df[:,-1]                # 출력값(타겟값)인 마지막 컬럼
+
+        # 문자로 된 label 숫자로 encoder
         e = LabelEncoder()
         e.fit(y_obj)
         y = e.transform(y_obj)
         y = y.astype('float32')
 
-        train_data = X[:int(len(X) * split)]
-        test_data = X[int(len(X) * split):]
-        train_label = y[:int(len(y) * split)]
-        test_label = y[int(len(y) * split):]
+        # test_size 입력하여 test를 몇으로 할건지, shuffle값이 default면 True
+        train_data, test_data, train_label, test_label = train_test_split(X, y, test_size=test_size, shuffle=False)
 
-        # train_data, test_data, train_label, test_label = train_test_split(X, y, test_size = (1 - split))
+        # DataLoader를 이용하여 batch_size 결정
+        train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size, shuffle=False)
+        test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size, shuffle=False)
 
-        # train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size, shuffle=True)
-        # test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
-
-        return train_data, test_data, train_label, test_label
+        return train_iter, test_iter
 ########################################################################################################################

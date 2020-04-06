@@ -1,11 +1,11 @@
 import json
 import mxnet as mx
 from mxnet import gluon, nd
-from mxnet.gluon.model_zoo import vision
 import numpy as np
 
 
 ########################################################################################################################
+########################### 데이터 불러오기: 이미지는 리스트로 불러옵니다.
 from cnn.load_image import Preprocessing
 
 path = 'dataset/image/pretrained/'
@@ -17,17 +17,18 @@ image_list = a.load_image()
 len(image_list)
 
 
-########################### Loading the model
+########################### Loading the model: trained된 모델 불러옵니다.
 ctx = mx.cpu()
 
 from mxnet.gluon.model_zoo import vision
 resnet = vision.resnet18_v1(pretrained=True, ctx=ctx)
-alexnet = vision.alexnet(pretrained=True, ctx=ctx)
+# alexnet = vision.alexnet(pretrained=True, ctx=ctx)
 
 
-### Loading the data
+########################### Loading the categories: 이미저장된 imagenet labels을 불러옵니다.
 categories = np.array(json.load(open('image_net_labels.json', 'r')))
 
+########################### defined predict
 def predict(model, image, categories, k):
     predictions = model(image).softmax()
     top_pred = predictions.topk(k=k)[0].asnumpy()
@@ -37,7 +38,7 @@ def predict(model, image, categories, k):
         print("{}: {:.2f}%".format(category, probability.asscalar()*100))
     print('')
 
-
+########################### predict(모델, 이미지 리스트, 카테고리, 평가항목 순위3까지)
 for image in image_list:
     predict(resnet, image, categories, 3)
 
