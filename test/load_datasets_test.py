@@ -19,6 +19,11 @@ a = Preprocessing()
 a.setdata(path, image_resize, batch_size)
 train_iter, test_iter = a.MNIST()
 
+for d, l in train_iter:
+    break
+d.shape
+l.shape
+
 ################## model
 from mxnet.gluon.model_zoo import vision
 ctx = mx.cpu()

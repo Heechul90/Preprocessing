@@ -10,15 +10,16 @@ from sklearn.preprocessing import StandardScaler
 
 
 class Preprocessing():
-    def setdata(self, data_path, seq, pred, sp):
-        self.data_path = data_path
-        self.seq = seq
-        self.pred = pred
-        self.sp = sp
+    def setdata(self, path, seq_length, predict, split, batch_size):
+        self.path = path
+        self.seq_length = seq_length
+        self.predict = predict
+        self.split = split
+        self.batch_size = batch_size
 
 
     def prediction(self):
-        path, seq_length, predict, split = self.data_path, self.seq, self.pred, self.sp
+        path, seq_length, predict, split, batch_size = self.path, self.seq_length, self.predict, self.split, self.batch_size
 
         dataset = pd.read_csv(path, index_col=None, header=None)
 
@@ -60,9 +61,9 @@ class Preprocessing():
         train_label = label[:int(len(label) * split)]
         test_label = label[int(len(label) * split):]
 
-        # train_set = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
-        # test_set = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
+        train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size)
+        test_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(test_data, test_label), batch_size=batch_size)
 
-        return train_data, test_data, train_label, test_label
+        return train_iter, test_iter
 
 

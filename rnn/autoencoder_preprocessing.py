@@ -7,26 +7,21 @@ from sklearn.model_selection import train_test_split
 
 
 class Preprocessing():
-    def setdata(self, train_path, test_path, val):
-        self.train_path = train_path
-        self.test_path = test_path
-        self.val = val
+    def setdata(self, path, split):
+        self.path = path
+        self.split = split
 
     def autoencoder(self):
-        train_path, test_path, validation = self.train_path, self.test_path, self.val
-        train_data = pd.read_csv(train_path, header=None, sep=',')
-        test_data = pd.read_csv(test_path, header=None, sep=',')
+        path, split = self.path, self.split
 
-        train_data = train_data.values.astype(np.float32)
-        test_data = test_data.values.astype(np.float32)
+        path = 'dataset/autoencoder/train_test.csv'
+        data = pd.read_csv(path, header=None, sep=',')
 
-        # scaler_ = StandardScaler()
-        # train_data = scaler_.fit_transform(train_data)
-        # test_data = scaler_.fit_transform(test_data)
+        data = data.values.astype(np.float32)
 
-        train_data = train_data[: int(len(train_data) * validation)]
-        validation_data = train_data[int(len(train_data) * validation): ]
+        train_data = data[: int(len(data) * split)]
+        test_data = data[int(len(data) * split): ]
 
-        return train_data, test_data, validation_data
+        return train_data, test_data
 
 

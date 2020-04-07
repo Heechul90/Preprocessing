@@ -12,7 +12,7 @@ import utils
 from cnn.image_preprocessing import Preprocessing
 
 data_path = 'dataset/image/MonkeySpecies'
-image_resize = 224
+image_resize = 96
 test_size = 0.3
 batch_size = 32
 
@@ -23,6 +23,7 @@ train_iter, test_iter = a.image()
 for d ,l in train_iter:
     break
 d.shape
+l.shape
 ################## model
 from mxnet.gluon.model_zoo import vision
 ctx = mx.cpu()
@@ -66,4 +67,5 @@ loss = gluon.loss.SigmoidBinaryCrossEntropyLoss()
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.01})
 utils.train(train_iter, test_iter, net, loss, trainer, ctx, num_epochs=10)
 # utils.train(train_data, test_data, net, loss, trainer, ctx, num_epochs=1)
+
 
