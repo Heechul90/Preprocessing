@@ -1,7 +1,8 @@
-from rnn.autoencoder_preprocessing import Preprocessing
+
 import mxnet as mx
 from mxnet import nd, autograd, gluon
 
+from rnn.autoencoder_preprocessing import Preprocessing
 
 path = 'dataset/autoencoder/train_test.csv'
 split = 0.7
@@ -10,9 +11,10 @@ a = Preprocessing()
 a.setdata(path, split, batch_size)
 train_data, test_data = a.autoencoder()
 
-for d in train_data:
+for d in test_data:
     break
-d.shape
+
+print(d[:5])
 
 
 ########################################################################################################################

@@ -55,7 +55,7 @@ class Preprocessing():
         y = y.astype('float32')
 
         # test_size 입력하여 test를 몇으로 할건지, shuffle값이 default면 True
-        train_data, test_data, train_label, test_label = train_test_split(X, y, test_size=test_size, shuffle=True)
+        train_data, test_data, train_label, test_label = train_test_split(X, y, test_size=test_size, shuffle=False)
 
         # DataLoader를 이용하여 batch_size 결정
         train_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(train_data, train_label), batch_size=batch_size, shuffle=False)

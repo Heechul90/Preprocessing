@@ -17,6 +17,10 @@ a = Preprocessing()
 a.setdata(path, test_size, batch_size)
 train_iter, test_iter = a.label()
 
+for d, l in train_iter:
+    break
+print(l[1])
+
 ### model
 net = nn.Sequential()
 with net.name_scope():
@@ -178,6 +182,10 @@ batch_size = 32
 a = Preprocessing()
 a.setdata(path, test_size, batch_size)
 train_iter, test_iter = a.nolabel()
+
+for d, l in train_iter:
+    break
+print(l[0])
 
 ### model
 net = nn.Sequential()
