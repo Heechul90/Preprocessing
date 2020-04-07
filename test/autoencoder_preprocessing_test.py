@@ -1,4 +1,4 @@
-from rnn.prediction_preprocessing import Preprocessing
+from rnn.autoencoder_preprocessing import Preprocessing
 import mxnet as mx
 from mxnet import nd, autograd, gluon
 
@@ -7,19 +7,19 @@ path = 'dataset/autoencoder/train_test.csv'
 split = 0.7
 batch_size = 32
 a = Preprocessing()
-a.setdata(path, seq_length, predict, split, batch_size)
-train_iter, test_iter = a.prediction()
+a.setdata(path, split, batch_size)
+train_data, test_data = a.autoencoder()
 
-for d, l in train_iter:
+for d in train_data:
     break
 d.shape
-l.shape
 
-##### model
+
+########################################################################################################################
 model = mx.gluon.nn.Sequential()
 
 with model.name_scope():
-    model.add(mx.gluon.rnn.LSTM(128))
+    model.add(mx.gluon.rnn.LSTM(1))
     model.add(mx.gluon.nn.Dense(1, activation='tanh'))
 
 
@@ -30,9 +30,8 @@ L = gluon.loss.L2Loss() # L2 loss: (실제값 - 예측치)제곱해서 더한 �
 # 평가
 def evaluate_accuracy(data_iterator, model, L):
     loss_avg = 0.
-    for i, (d, l) in enumerate(data_iterator):
-        data = d.as_in_context(ctx).reshape((-1, 1, 1))
-        label = l.as_in_context(ctx).reshape((-1, 1, 1))
+    for i, data in enumerate(data_iterator):
+        data = data.as_in_context(ctx).reshape((-1, 1, 1))
         output = model(data)
         loss = L(output, data)
         loss_avg = (loss_avg * i + nd.mean(loss).asscalar()) / (i + 1)
@@ -42,7 +41,6 @@ def evaluate_accuracy(data_iterator, model, L):
 
 # cpu or gpu
 ctx = mx.cpu()
-
 
 # Xavier는 모든 layers에서 gradient scale이 거의 동일하게 유지하도록 설계됨
 model.collect_params().initialize(mx.init.Xavier(), ctx=ctx)
@@ -60,9 +58,8 @@ validation_mse = []
 
 for epoch in range(epochs):
     print(str(epoch+1))
-    for i, (d, l) in enumerate(train_iter):
-        data = d.as_in_context(ctx).reshape((-1, 1, 1))
-        label = l.as_in_context(ctx).reshape((-1, 1, 1))
+    for i, data in enumerate(train_data):
+        data = data.as_in_context(ctx).reshape((-1, 1, 1))
 
         with autograd.record():
             output = model(data)
@@ -71,5 +68,14 @@ for epoch in range(epochs):
         loss.backward()
         trainer.step(batch_size)
 
-    training_mse.append(evaluate_accuracy(train_iter, model, L))
-    validation_mse.append(evaluate_accuracy(test_iter, model, L))
+    training_mse.append(evaluate_accuracy(train_data, model, L))
+    validation_mse.append(evaluate_accuracy(test_data, model, L))
+
+import matplotlib.pyplot as plt
+plt.plot(training_mse, color='r')
+plt.plot(validation_mse, color='b')
+
+print(training_mse[-1], validation_mse[-1])
+
+len(training_mse)
+
