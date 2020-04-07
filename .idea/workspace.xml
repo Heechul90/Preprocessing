@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f295514-939d-40f5-adaf-b696179b75e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn/dense_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn/dense_preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/autoencoder_preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/autoencoder_preprocessing_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dense_preprocessing_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/dense_preprocessing_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/파이썬 전처리 코드 모듈화 설명.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/파이썬 전처리 코드 모듈화 설명.pptx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="185" column="8" selection-start-line="185" selection-start-column="7" selection-end-line="185" selection-end-column="8" />
+            <state relative-caret-position="429">
+              <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
               <folding>
                 <element signature="e#33#51#0" expanded="true" />
               </folding>
@@ -240,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586246906461</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="preprocessing">
+      <created>1586250041504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586250041504</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/dense_preprocessing_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="185" column="8" selection-start-line="185" selection-start-column="7" selection-end-line="185" selection-end-column="8" />
+        <state relative-caret-position="429">
+          <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
           <folding>
             <element signature="e#33#51#0" expanded="true" />
           </folding>

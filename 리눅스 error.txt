@@ -1,0 +1,15 @@
+테스트에 샘플이 없으면 나는 에러
+
+
+
+text
+gluonnlp
+
+gluonnlp 설치
+설치 안되면 INIS_EX.exe 설치 후 실행
+
+
+gluonnlp.data.SacreMosesTokenizer() 
+pip install -U sacremoses 로설치
+참고: https://github.com/alvations/sacremoses
+
