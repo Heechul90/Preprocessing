@@ -24,6 +24,8 @@ class Preprocessing():
     def text(self):
         path, sep, test_size, batch_size = self.path, self.sep, self.test_size, self.batch_size
 
+        path = 'dataset/nlp/timemachine.txt'
+        sep = '\\'
         data = pd.read_csv(path, header=None, sep=sep)
 
         # 한 문장을 하나의 리스트로 저장
@@ -45,7 +47,7 @@ class Preprocessing():
         vocab_size = len(vocab.token_to_idx)
 
         sequences = list()
-        for line in text:                              # 1,214 개의 샘플에 대해서 샘플을 1개씩 가져온다.
+        for line in text:                                # 샘플에 대해서 샘플을 1개씩 가져온다.
             encoded = vocab.to_indices(tokenizer(line))  # 문자열을 정수 인덱스로 변환
             for i in range(1, len(encoded)):
                 sequence = encoded[:i+1]
@@ -53,6 +55,11 @@ class Preprocessing():
 
         # sequence의 최대 길이
         max_len = max(len(l) for l in sequences)
+
+        a = sequences[:100]
+        max = max(len(l) for l in a)
+        datasets = nlp.data.PadSequence(length=max, pad_val=0)
+        a.transform(nlp.data.PadSequence(length=max, pad_val=0))
 
         ################################################################################################################
         # pad처리(gluonnlp로는 못찾음-일단 케라스를 이용해서 padding)
@@ -64,7 +71,14 @@ class Preprocessing():
 
         # 입력값과 출력값 분리
         X = sequences[:, :-1].astype('float32')
-        y = sequences[:,-1].astype('float32')
+        y = sequences[:,-1]
+
+        a = y[:5]
+        a = mx.nd.array(a)
+
+        # one-hot encoding
+        mx.nd.one_hot(a, depth=5)
+
 
         # 트레이닝셋과 테스트셋 분리
         train_data, test_data, train_label, test_label = train_test_split(X, y, test_size = test_size, shuffle=False)

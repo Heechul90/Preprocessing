@@ -11,18 +11,18 @@ import utils
 ##### MNIST
 from cnn.load_datasets import Preprocessing
 
-path = 'dataset/image/MNIST'
+path = 'dataset/image/FashionMNIST'
 image_resize = 244
 batch_size = 32
 
 a = Preprocessing()
 a.setdata(path, image_resize, batch_size)
-train_iter, test_iter = a.MNIST()
+train_iter, test_iter = a.FashionMNIST()
 
 for d, l in train_iter:
     break
-d.shape
-l.shape
+print(d.shape)
+print(l.shape)
 
 ################## model
 from mxnet.gluon.model_zoo import vision

@@ -14,7 +14,7 @@ image_resize = 224
 a = Preprocessing()
 a.setdata(path, image_resize)
 image_list = a.load_image()
-len(image_list)
+print(image_list[0])
 
 ########################### Loading the model: trained된 모델 불러옵니다.
 ctx = mx.cpu()
