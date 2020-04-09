@@ -15,8 +15,8 @@ train_iter, test_iter = a.prediction()
 
 for d, l in train_iter:
     break
-d.shape
-l.shape
+print(d.shape)
+print(l.shape)
 
 ##### model
 model = mx.gluon.nn.Sequential()

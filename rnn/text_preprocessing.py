@@ -46,6 +46,7 @@ class Preprocessing():
         vocab = nlp.Vocab(counter)
         vocab_size = len(vocab.token_to_idx)
 
+        # 단어를 index 번호로 바꾸기
         sequences = list()
         for line in text:                                # 샘플에 대해서 샘플을 1개씩 가져온다.
             encoded = vocab.to_indices(tokenizer(line))  # 문자열을 정수 인덱스로 변환
@@ -56,29 +57,34 @@ class Preprocessing():
         # sequence의 최대 길이
         max_len = max(len(l) for l in sequences)
 
-        a = sequences[:100]
-        max = max(len(l) for l in a)
-        datasets = nlp.data.PadSequence(length=max, pad_val=0)
-        a.transform(nlp.data.PadSequence(length=max, pad_val=0))
-
         ################################################################################################################
-        # pad처리(gluonnlp로는 못찾음-일단 케라스를 이용해서 padding)
-        from tensorflow.keras.preprocessing.sequence import pad_sequences
-        sequences = pad_sequences(sequences,
-                                  maxlen=max_len,  # 최대 길이를 설정
-                                  padding='pre')   # pre: 앞으로 값을 채움, post: 뒤로 값을 채움
+        # # pad처리(gluonnlp로는 못찾음-일단 케라스를 이용해서 padding)
+        # from tensorflow.keras.preprocessing.sequence import pad_sequences
+        # sequences = pad_sequences(sequences,
+        #                           maxlen=max_len,  # 최대 길이를 설정
+        #                           padding='pre')   # pre: 앞으로 값을 채움, post: 뒤로 값을 채움
+
+        def pad_sequences(sample, length, pad_val, padding='pre'):
+            sample_length = len(sample)
+            if padding == 'pre':
+                return [pad_val for _ in range(length - sample_length)] + sample
+            else:
+                return sample + [pad_val for _ in range(length - sample_length)]
+
+        mysequences = list()
+        for l in sequences:
+            encoded = pad_sequences(l, max_len, 0, padding='pre')
+            mysequences.append(encoded)
+
+        mysequences = np.array(mysequences)
+
         ################################################################################################################
 
         # 입력값과 출력값 분리
-        X = sequences[:, :-1].astype('float32')
-        y = sequences[:,-1]
-
-        a = y[:5]
-        a = mx.nd.array(a)
+        X = mysequences[:, :-1].astype('float32')
+        y = mysequences[:,-1].astype('float32')
 
         # one-hot encoding
-        mx.nd.one_hot(a, depth=5)
-
 
         # 트레이닝셋과 테스트셋 분리
         train_data, test_data, train_label, test_label = train_test_split(X, y, test_size = test_size, shuffle=False)

@@ -11,6 +11,7 @@ import utils
 from rnn.text_preprocessing import Preprocessing
 
 path = 'dataset/nlp/timemachine.txt'
+# path = 'dataset/text/text_test.csv'
 sep = '\\'
 test_size = 0.2
 batch_size = 32
